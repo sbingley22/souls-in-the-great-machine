@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Souls in the Great Machine</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background: black;
+        max-width: 1920px;
+        margin: auto;
+        color: silver;
+      }
+      nav {
+        background: #112;
+        padding: 5px;
+        position: fixed;
+        top: 0;
+      }
+      nav a {
+        text-decoration: none;
+        color: silver;
+        font-size: 2rem;
+        margin-right: 25px;
+      }
+      p {
+        font-size: 1.6rem;
+      }
+      h1,h2,h3,h4,h5 {
+        color: gold;
+      }
+
+      #characters {
+        padding: 60px 0;
+        background: #020;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+      .character {
+        max-height: 50vh;
+        max-width: 900px;
+        display: flex;
+        color: silver;
+        text-align: center;
+        gap: 20px;
+        border: 2px solid gold;
+      }
+      .character > :nth-child(2) {
+        overflow: auto;
+        max-width: 400px;
+        flex-shrink: 1;
+        flex-grow: 0;
+      }
+      .character img {
+        max-height: 100%;
+        max-width: 100%;
+        overflow: hidden;
+      }
+      .character h2 {
+        text-decoration: underline;
+        color: gold;
+      }
+
+      #main-text-container {
+        max-width: 1440px;
+        margin: auto;
+      }
+
+      #souls-summary {
+        background: #202;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      #souls-summary > div {
+        border-top: 1px solid gold;
+      }
+      #souls-summary img {
+        max-height: 30vh;
+        float: right;
+      }
+      #souls-summary a {
+        font-size: 1.4rem;
+        margin: 20px;
+        color: red;
+      }
+      #souls-summary p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-family: 'Times New Roman', Times, serif;
+      }
+
+      #review {
+        padding: 20px;
+        background: #200;
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="nav-element">
+      <a href="#characters">Characters</a>
+      <a href="#souls-summary">Souls in the Great Machine</a>
+      <a href="#review">Review</a>
+    </nav>
+
+    <div id="characters">
+
+      <div class="character">
+        <div>
+          <img src="Zarvora.png" alt="">
+        </div>
+        <div>
+          <h2>Zarvora</h2>
+          <p>An ambitious, intelligent, and rutheless woman with a mission.</p>
+          <p>She has built her own manually operated computer and has plans to use it to become the most powerful person in the known world and stop dooms day.</p>
+          <p>Deadly with a rifle, she has won several duels and isn't afraid to destroy anyone who gets in her way.</p>
+        </div>
+      </div>
+
+      <div class="character">
+        <div>
+          <img src="Lemorel.png" alt="">
+        </div>
+        <div>
+          <h2>Lemorel</h2>
+          <p>A smart, capable, and deadly lady looking to escape her past.</p>
+          <p>She has had and won several duels which, amongst other things, led to her becoming a black sheep in her town.</p>
+          <p>She is guarded, not very sociable, but is fairly gifted in mathematics, a skill set the new highlibre has high demand for.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="main-text-container">
+
+      <div id="souls-summary">
+        <div>
+          <h1>Souls in the Great Machine</h1>
+          <h2>Chapter Select:</h2>
+          <a href="#souls-1">1-Champions</a>
+          <a href="#souls-2">2-Captial</a>
+          <a href="#souls-3">3-Courtship</a>
+          <a href="#souls-4">4-Captive</a>
+        </div>
+
+        <div id="souls-1">
+          <img src="Ch1-Champions.png" alt="">
+          <h2>Chapter 1 - Champions</h2>
+          <p>Zavora is busy solidifying her controversial position as new highlibre by winning duels to the death and other means of forcing people on board with her radical new direction.</p>
+          <p>She simply humiliated the grand games master by having her Computer, the only one in existance and operated by humans, beat him at his own game, champions.</p>
+          <p>This Calculor is essential to her plans to make Rochester, and herself the center of power in the known world.</p>
+        </div>
+
+        <div id="souls-2">
+          <img src="Ch2-Arrival.png" alt="">
+          <h2>Chapter 2 - Captial</h2>
+          <p>Lemorel sees a way out of her town and troubled past and is desperate to take it, leaving on the first cycle powered train out of there.</p>
+          <p>She manages to get promoted and hired to work in Rochester at the main library, the same one Zavora and her human computer is.</p>
+          <p>She befriends Darien, a mute Dragon Blue linguist and settles into her new life.</p>
+        </div>
+
+        <div id="souls-3">
+          <h2>Chapter 3 - Courtship</h2>
+          <p>An assination attempt on Zavora fails but the second in command of the library Lewick is killed.</p>
+          <p>Tarrin, the new second in command, is next but survives, the suspicous members of the library are rounded up and forced to work as prisoners / components on the great computer.</p>
+          <p>Lemorel meets Glaskin and they become somewhat secret lovers.</p>
+        </div>
+
+        <div id="souls-4">
+          <h2>Chapter 4 - Captive</h2>
+        </div>
+
+      </div>
+
+      <div id="review">
+        <h1>Review</h1>
+      </div>
+
+    </div>
+
+  </body>
+
+  <script>
+    const navElement = document.getElementById('nav-element')
+  </script>
+</html>

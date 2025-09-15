@@ -21,6 +21,7 @@
         padding: 5px;
         position: fixed;
         top: 0;
+        border: 2px solid gold;
       }
       nav a {
         text-decoration: none;
@@ -36,8 +37,10 @@
       }
 
       #characters {
-        padding: 60px 0;
+        padding-top: 60px;
+        padding-bottom: 10px;
         background: #020;
+        background: transparent;
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
@@ -45,16 +48,18 @@
       }
       .character {
         max-height: 50vh;
-        max-width: 900px;
+        max-width: 600px;
         display: flex;
         color: silver;
         text-align: center;
+        justify-content: center;
+        align-items: center;
         gap: 20px;
         border: 2px solid gold;
       }
       .character > :nth-child(2) {
         overflow: auto;
-        max-width: 400px;
+        max-width: 300px;
         flex-shrink: 1;
         flex-grow: 0;
       }
@@ -79,9 +84,13 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
+        border: 2px solid gold;
       }
       #souls-summary > div {
         border-top: 1px solid gold;
+      }
+      #souls-summary > :first-child {
+        border: 0;
       }
       #souls-summary img {
         max-height: 30vh;
@@ -106,7 +115,7 @@
   <body>
     <nav id="nav-element">
       <a href="#characters">Characters</a>
-      <a href="#souls-summary">Souls in the Great Machine</a>
+      <a href="#souls-summary">Summary</a>
       <a href="#review">Review</a>
     </nav>
 
@@ -167,6 +176,7 @@
         </div>
 
         <div id="souls-3">
+          <img src="Ch3-Courtship.png" alt="">
           <h2>Chapter 3 - Courtship</h2>
           <p>An assination attempt on Zavora fails but the second in command of the library Lewick is killed.</p>
           <p>Tarrin, the new second in command, is next but survives, the suspicous members of the library are rounded up and forced to work as prisoners / components on the great computer.</p>
@@ -188,6 +198,16 @@
   </body>
 
   <script>
+    let lastScrollY = window.pageYOffset
     const navElement = document.getElementById('nav-element')
+
+    document.addEventListener('scroll', () => {
+      if (!navElement) return
+      if (window.pageYOffset > lastScrollY) {
+        navElement.style.display = 'none'
+      }
+      else navElement.style.display = 'flex'
+      lastScrollY = window.pageYOffset
+    })
   </script>
 </html>

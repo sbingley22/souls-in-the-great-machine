@@ -48,7 +48,7 @@
       }
       .character {
         max-height: 50vh;
-        max-width: 600px;
+        max-width: 800px;
         display: flex;
         color: silver;
         text-align: center;
@@ -56,10 +56,11 @@
         align-items: center;
         gap: 20px;
         border: 2px solid gold;
+        background: #111;
       }
       .character > :nth-child(2) {
         overflow: auto;
-        max-width: 300px;
+        max-width: 500px;
         flex-shrink: 1;
         flex-grow: 0;
       }
@@ -76,6 +77,7 @@
       #main-text-container {
         max-width: 1440px;
         margin: auto;
+        margin-top: 60px;
       }
 
       #souls-summary {
@@ -109,14 +111,15 @@
       #review {
         padding: 20px;
         background: #200;
+        margin-top: 60px;
       }
     </style>
   </head>
   <body>
     <nav id="nav-element">
-      <a href="#characters">Characters</a>
-      <a href="#souls-summary">Summary</a>
-      <a href="#review">Review</a>
+      <a href="#characters" onclick="showSection('characters')">Characters</a>
+      <a href="#souls-summary" onclick="showSection('summary')">Summary</a>
+      <a href="#review" onclick="showSection('review')">Review</a>
     </nav>
 
     <div id="characters">
@@ -145,7 +148,7 @@
         </div>
       </div>
 
-      <div>
+      <div class="character">
         <div>
           <img src="Glaskin.png" alt="">
         </div>
@@ -167,9 +170,21 @@
         </div>
       </div>
 
+      <div class="character">
+        <div>
+          <img src="Abbess.png" alt="">
+        </div>
+        <div>
+          <h2>Abbess</h2>
+          <p>A northern realms princess who can resist the call. Shes nice but use her status to her advantage.</p>
+          <p>Has a big interest in discovering the calls source and unravaling that mystery.</p>
+          <p>She has taught her devoted brother Ilyire to also resist the call.</p>
+        </div>
+      </div>
+
     </div>
 
-    <div id="main-text-container">
+    <div id="main-text-container" style="display: none;">
 
       <div id="souls-summary">
         <div>
@@ -184,7 +199,11 @@
           <a href="#souls-7">7-Coup</a>
           <a href="#souls-8">8-Combat</a>
           <a href="#souls-9">9-Catastrophy</a>
-          <a href="#souls-10">10-</a>
+          <a href="#souls-10">10-Chrysalis</a>
+          <a href="#souls-11">11-Cantrip</a>
+          <a href="#souls-12">12-</a>
+          <a href="#souls-13">13-</a>
+          <a href="#souls-14">14-</a>
         </div>
 
         <div id="souls-1">
@@ -257,18 +276,43 @@
         <div id="souls-9">
           <img src="Ch9-Catastrophy.png" alt="">
           <h2>Chapter 9 - Catastrophy</h2>
-          <p></p>
+          <p>The Abbess meets Zarvora who reveals she also can resist the call and she thinks its to do with bird genes or hair samples. They find a place were many people can resist it and head there.</p>
+          <p>Lemorel leaves with Gaskin to travel north to Glenellen to find Nikalan. Glaskin is supposed to be her guide but soon escapes so she kills some northerner and forces him to be her new guide.</p>
         </div>
 
         <div id="souls-10">
-          <img src="Ch10-.png" alt="">
-          <h2>Chapter 10 - </h2>
+          <img src="Ch10-Chrysalis.png" alt="">
+          <h2>Chapter 10 - Chrysalis</h2>
+          <p></p>
+        </div>
+
+        <div id="souls-11">
+          <img src="Ch11-Cantrip.png" alt="">
+          <h2>Chapter 11 - Cantrip</h2>
+          <p></p>
+        </div>
+
+        <div id="souls-12">
+          <img src="Ch12-.png" alt="">
+          <h2>Chapter 12 - </h2>
+          <p></p>
+        </div>
+
+        <div id="souls-13">
+          <img src="Ch13-.png" alt="">
+          <h2>Chapter 13 - </h2>
+          <p></p>
+        </div>
+
+        <div id="souls-14">
+          <img src="Ch14-.png" alt="">
+          <h2>Chapter 14 - </h2>
           <p></p>
         </div>
 
       </div>
 
-      <div id="review">
+      <div id="review" style="display: none;">
         <h1>Review</h1>
       </div>
 
@@ -288,5 +332,21 @@
       else navElement.style.display = 'flex'
       lastScrollY = window.pageYOffset
     })
+
+    const charactersElement = document.getElementById('characters')
+    const mainElement = document.getElementById('main-text-container')
+    const reviewElement = document.getElementById('review')
+
+    function showSection(name) {
+      console.log(name)
+      charactersElement.style.display = 'none'
+      mainElement.style.display = 'none'
+      reviewElement.style.display = 'none'
+
+      if (name === 'characters') charactersElement.style.display = 'flex'
+      else if (name === 'summary') mainElement.style.display = 'flex'
+      else if (name === 'review') reviewElement.style.display = 'flex'
+    }
+
   </script>
 </html>
